@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://n21ovi4u7yld" path="res://Scripts/Enemies/enemy.gd" id="1_1f0kj"]
 [ext_resource type="PackedScene" uid="uid://c8apyxns2oqop" path="res://Scenes/models/enemy_model.tscn" id="1_hghv2"]
+[ext_resource type="PackedScene" uid="uid://c0u4du53jiy0o" path="res://Scenes/xp_gem.tscn" id="2_287tu"]
 [ext_resource type="Script" uid="uid://ydf6wgjiyqtq" path="res://Scripts/Components/HealthComponent.gd" id="3_afpow"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ekxgv"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=807197159 groups=["enemy"]]
 script = ExtResource("1_1f0kj")
+xp_given = 999999
+xp_gem_scene = ExtResource("2_287tu")
 
 [node name="EnemyModel" parent="." unique_id=805391372 instance=ExtResource("1_hghv2")]
 
@@ -16,5 +19,5 @@ shape = SubResource("CapsuleShape3D_ekxgv")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=653204732]
 script = ExtResource("3_afpow")
-max_hp = 1000.0
+max_hp = 1.0
 metadata/_custom_type_script = "uid://ydf6wgjiyqtq"

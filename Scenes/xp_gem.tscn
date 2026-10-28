@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c0u4du53jiy0o"]
+
+[ext_resource type="Script" uid="uid://4sr1gas36iyp" path="res://Scripts/xp_gem.gd" id="1_1kps5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyx0u"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 4.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ekxgv"]
+material = SubResource("StandardMaterial3D_eyx0u")
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ekxgv"]
+
+[node name="XpGem" type="Area3D" unique_id=835969426]
+script = ExtResource("1_1kps5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=160622606]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_ekxgv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1599425226]
+shape = SubResource("SphereShape3D_ekxgv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

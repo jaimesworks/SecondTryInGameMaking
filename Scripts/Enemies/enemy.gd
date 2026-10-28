@@ -2,11 +2,15 @@ extends CharacterBody3D
 
 var player : Node3D;
 
+@export var xp_given := 10
 @export var speed := 3.00
 @export var rotation_speed := 10.0 #how fast the model rotates when changing directions
+@export var xp_gem_scene : PackedScene
+
 
 @onready var model : Node3D = $EnemyModel
 @onready var healthComponent : Node = $HealthComponent
+
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -33,4 +37,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_died():
 	print(self.name, " died")
+	var gem := xp_gem_scene.instantiate()
+	gem.value = xp_given
+	gem.position = global_position
+	get_tree().current_scene.add_child.call_deferred(gem)
 	queue_free()

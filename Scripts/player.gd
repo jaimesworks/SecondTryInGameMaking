@@ -12,9 +12,6 @@ extends CharacterBody3D
 @onready var healthComponent: Node = $HealthComponent #reference to the healthcomponent
 @onready var hurtbox: Area3D = $Hurtbox #reference to the hurtbox
 
-const BULLET_SCENE := preload("res://Scenes/bullet.tscn")
-
-
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	spring_arm.add_excluded_object(get_rid())
@@ -74,3 +71,7 @@ func _physics_process(delta: float) -> void:
 func _on_died():
 	print(self.name, " died")
 	get_tree().reload_current_scene()
+
+
+func _on_experience_component_leveled_up(new_level: int) -> void:
+	print(new_level)

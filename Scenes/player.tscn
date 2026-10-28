@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dxn8nppmjyag2" path="res://Scenes/models/basic_model.tscn" id="2_cvnsp"]
 [ext_resource type="Script" uid="uid://ydf6wgjiyqtq" path="res://Scripts/Components/HealthComponent.gd" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://d5bu4edc31r3" path="res://Scripts/Modifiers/modifier_inventory.gd" id="5_fkybt"]
-[ext_resource type="Resource" uid="uid://d0mp7rfitxpgd" path="res://Data/Modifiers/attack_speed_modifier.tres" id="6_3smsa"]
 [ext_resource type="Script" uid="uid://c7r7vvsj2e1mw" path="res://Scripts/Components/StatsComponent.gd" id="6_x3wgy"]
+[ext_resource type="Script" uid="uid://dra6i81ddu0gy" path="res://Scripts/Components/ExperienceComponent.gd" id="7_3smsa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eyx0u"]
 
@@ -43,5 +43,10 @@ metadata/_custom_type_script = "uid://c7r7vvsj2e1mw"
 
 [node name="ModifierInventory" type="Node" parent="." unique_id=659147737]
 script = ExtResource("5_fkybt")
-debug_modifier = ExtResource("6_3smsa")
 metadata/_custom_type_script = "uid://d5bu4edc31r3"
+
+[node name="ExperienceComponent" type="Node" parent="." unique_id=1918233297]
+script = ExtResource("7_3smsa")
+metadata/_custom_type_script = "uid://dra6i81ddu0gy"
+
+[connection signal="leveled_up" from="ExperienceComponent" to="." method="_on_experience_component_leveled_up"]

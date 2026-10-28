@@ -5,13 +5,10 @@ class_name ModifierInventory
 var levels := {}
 @onready var stats_component : StatsComponent = get_parent().get_node("StatsComponent")
 
-#DEBUG, quitar
-@export var debug_modifier: ModifierData
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("debug_key"):
-		upgrade(debug_modifier, Rarity.Tier.values().pick_random())
-
 func can_upgrade(modifier: ModifierData) -> bool :
+	#check if the modifier is already on inventory
+	#if yes, return false if is already maxed out
+	#if not, return false if the inventory is full
 	if levels.has(modifier) :
 		return levels[modifier] < modifier.max_level
 	return levels.size() < max_slots
