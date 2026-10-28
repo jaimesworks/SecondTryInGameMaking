@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModifierData" format=3 uid="uid://dgsota3spare0"]
+
+[ext_resource type="Script" uid="uid://8670v2skp8g8" path="res://Scripts/Modifiers/modifier_data.gd" id="1_ienhw"]
+
+[resource]
+script = ExtResource("1_ienhw")
+display_name = "Fuerza"
+base_bonus = 0.05
+max_level = 5
+metadata/_custom_type_script = "uid://8670v2skp8g8"

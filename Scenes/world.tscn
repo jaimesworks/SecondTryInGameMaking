@@ -33,6 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2334723, 0)
 
 [node name="Enemy" parent="." unique_id=807197159 instance=ExtResource("2_go701")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1094203, -6.9027185)
+speed = 0.0
 
 [node name="Room" parent="." unique_id=1246481952 instance=ExtResource("3_5a7ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)

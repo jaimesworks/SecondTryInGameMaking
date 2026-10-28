@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://irpuxp7jcg53"]
 
-[ext_resource type="Script" uid="uid://n21ovi4u7yld" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Script" uid="uid://n21ovi4u7yld" path="res://Scripts/Enemies/enemy.gd" id="1_1f0kj"]
 [ext_resource type="PackedScene" uid="uid://c8apyxns2oqop" path="res://Scenes/models/enemy_model.tscn" id="1_hghv2"]
 [ext_resource type="Script" uid="uid://ydf6wgjiyqtq" path="res://Scripts/Components/HealthComponent.gd" id="3_afpow"]
 
