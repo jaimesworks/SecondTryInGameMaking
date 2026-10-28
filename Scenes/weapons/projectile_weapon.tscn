@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://4466bqdnrs2s"]
+
+[ext_resource type="Script" uid="uid://h085xes0cp0o" path="res://Scripts/WeaponScripts/projectile_weapon.gd" id="1_qwc1g"]
+[ext_resource type="PackedScene" uid="uid://7053kkg5ur8c" path="res://Scenes/bullet.tscn" id="2_0xbi4"]
+
+[node name="projectile_weapon" type="Node3D" unique_id=1033279224]
+script = ExtResource("1_qwc1g")
+bullet_scene = ExtResource("2_0xbi4")
+cooldown_time = 0.3

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bhto4jp2m4768"]
+
+[ext_resource type="Script" uid="uid://dd046bo0vkhmv" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://dxn8nppmjyag2" path="res://Scenes/models/basic_model.tscn" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://ydf6wgjiyqtq" path="res://Scripts/Components/HealthComponent.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://c7r7vvsj2e1mw" path="res://Scripts/Components/StatsComponent.gd" id="6_x3wgy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eyx0u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ekxgv"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1714508525 groups=["player"]]
+script = ExtResource("1_v0iea")
+
+[node name="model" parent="." unique_id=405320823 instance=ExtResource("2_cvnsp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=213674169]
+shape = SubResource("CapsuleShape3D_eyx0u")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1172082175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1730811584]
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1823825836]
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1778935999]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=832324920]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ekxgv")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1992261338]
+script = ExtResource("3_6t5aa")
+metadata/_custom_type_script = "uid://ydf6wgjiyqtq"
+
+[node name="StatsComponent" type="Node" parent="." unique_id=7036078]
+script = ExtResource("6_x3wgy")
+metadata/_custom_type_script = "uid://c7r7vvsj2e1mw"

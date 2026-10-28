@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dufmtkai3aa48"]
+
+[ext_resource type="PackedScene" uid="uid://bhto4jp2m4768" path="res://Scenes/player.tscn" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://dr0uuweljyy67" path="res://Scenes/weapons/aura_weapon.tscn" id="2_8j60k"]
+[ext_resource type="PackedScene" uid="uid://irpuxp7jcg53" path="res://Scenes/enemy.tscn" id="2_go701"]
+[ext_resource type="PackedScene" uid="uid://06yrkkbjxine" path="res://Scenes/room.tscn" id="3_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://4466bqdnrs2s" path="res://Scenes/weapons/projectile_weapon.tscn" id="3_fo5ed"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x8tuq"]
+
+[sub_resource type="Sky" id="Sky_41pxx"]
+sky_material = SubResource("ProceduralSkyMaterial_x8tuq")
+
+[sub_resource type="Environment" id="Environment_eyx0u"]
+background_mode = 2
+sky = SubResource("Sky_41pxx")
+
+[node name="World" type="Node3D" unique_id=1743953976]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1278565525]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1465397394]
+environment = SubResource("Environment_eyx0u")
+
+[node name="Player" parent="." unique_id=1714508525 instance=ExtResource("1_a02cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2334723, 0)
+
+[node name="aura_weapon" parent="Player" unique_id=1451043719 instance=ExtResource("2_8j60k")]
+
+[node name="projectile_weapon" parent="Player" unique_id=1033279224 instance=ExtResource("3_fo5ed")]
+
+[node name="Enemy" parent="." unique_id=807197159 instance=ExtResource("2_go701")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1094203, -6.9027185)
+
+[node name="Room" parent="." unique_id=1246481952 instance=ExtResource("3_5a7ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
