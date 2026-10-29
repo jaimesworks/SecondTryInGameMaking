@@ -9,7 +9,6 @@
 
 [node name="Enemy" type="CharacterBody3D" unique_id=807197159 groups=["enemy"]]
 script = ExtResource("1_1f0kj")
-xp_given = 999999
 xp_gem_scene = ExtResource("2_287tu")
 
 [node name="EnemyModel" parent="." unique_id=805391372 instance=ExtResource("1_hghv2")]

@@ -1,8 +1,8 @@
 extends Area3D
 
-var speed := 15.00 
-var damage := 10.00
-var lifetime := 3.00
+var speed := 15.00 ##Base speed
+var damage := 10.00 ##Base damage
+var lifetime := 3.00 ##Base lifetime
 
 var direction : Vector3
 

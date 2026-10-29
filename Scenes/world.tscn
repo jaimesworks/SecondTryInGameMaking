@@ -5,6 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://irpuxp7jcg53" path="res://Scenes/enemy.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://06yrkkbjxine" path="res://Scenes/room.tscn" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://4466bqdnrs2s" path="res://Scenes/weapons/projectile_weapon.tscn" id="3_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://dtu87r71ksj1d" path="res://Scenes/level_up_screen.tscn" id="6_5ukr8"]
+[ext_resource type="Script" uid="uid://8670v2skp8g8" path="res://Scripts/Modifiers/modifier_data.gd" id="7_o06y3"]
+[ext_resource type="Resource" uid="uid://b0oxo1fmnlicg" path="res://Data/Modifiers/area_modifier.tres" id="8_0fj1v"]
+[ext_resource type="Resource" uid="uid://d0mp7rfitxpgd" path="res://Data/Modifiers/attack_speed_modifier.tres" id="9_ikia7"]
+[ext_resource type="Resource" uid="uid://dgsota3spare0" path="res://Data/Modifiers/damage_modifier.tres" id="10_7yui6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x8tuq"]
 
@@ -37,3 +42,6 @@ speed = 0.0
 
 [node name="Room" parent="." unique_id=1246481952 instance=ExtResource("3_5a7ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="LevelUpScreen" parent="." unique_id=786042998 instance=ExtResource("6_5ukr8")]
+modifier_pool = Array[ExtResource("7_o06y3")]([ExtResource("8_0fj1v"), ExtResource("9_ikia7"), ExtResource("10_7yui6")])

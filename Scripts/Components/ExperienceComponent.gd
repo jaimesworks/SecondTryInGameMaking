@@ -1,15 +1,14 @@
 extends Node
 class_name ExperienceComponent
+#Stores the level and experience of its parent
+var actual_xp := 0.0 ## The current xp stored
+var actual_level := 0 ## The actual level
+var xp_for_next_lvl := 10.0 ## The xp required for the next level
 
-var actual_xp := 0.0
-var actual_level := 0
-var xp_for_next_lvl := 10.0
-
+## Signal executed when the player levels up
 signal leveled_up(new_level: int)
 
-func on_leveled_up(new_level: int) -> void:
-	print("Nuevo nivel: ", new_level)
-
+## Adds experience to the player
 func add_experience(amount: float) -> void:
 	actual_xp += amount
 	while actual_xp >= xp_for_next_lvl:

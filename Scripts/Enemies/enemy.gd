@@ -2,14 +2,14 @@ extends CharacterBody3D
 
 var player : Node3D;
 
-@export var xp_given := 10
-@export var speed := 3.00
-@export var rotation_speed := 10.0 #how fast the model rotates when changing directions
-@export var xp_gem_scene : PackedScene
+@export var xp_given := 10 ## The xp it gives when dies
+@export var speed := 3.00 ## How fast it moves
+@export var rotation_speed := 10.0 ## How fast the model rotates when changing directions
+@export var xp_gem_scene : PackedScene ## The Scene of the XpGem it drops when dies
 
 
-@onready var model : Node3D = $EnemyModel
-@onready var healthComponent : Node = $HealthComponent
+@onready var model : Node3D = $EnemyModel ##reference of its model
+@onready var healthComponent : Node = $HealthComponent ##reference of its HealthComponent
 
 
 func _ready() -> void:
@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+## Drops a XpGem where it died and removes it from the scene
 func _on_died():
 	print(self.name, " died")
 	var gem := xp_gem_scene.instantiate()

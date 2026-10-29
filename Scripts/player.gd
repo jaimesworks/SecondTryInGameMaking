@@ -1,16 +1,20 @@
 extends CharacterBody3D
+## Base speed of the player
+@export var speed := 6.0
+## Base jump heigh
+@export var jump_velocity := 5.0 
+## Mouse sensivity 
+@export var mouse_sensivity := 0.003 
+## How fast the model rotates when changing directions
+@export var rotation_speed := 10.0 
+## How many seconds the pj is invincible after a hit
+@export var damage_cooldown := 0.5 
 
-@export var speed := 6.0 #base player speed
-@export var jump_velocity := 5.0 #base jump heigh
-@export var mouse_sensivity := 0.003 #mouse sensivity xd
-@export var rotation_speed := 10.0 #how fast the model rotates when changing directions
-@export var damage_cooldown := 0.5 # how many seconds the pj is invincible after a hit
-
-@onready var camera_pivot: Node3D = $CameraPivot #reference to the camera pivot (moves the camera in the Y axis)
-@onready var spring_arm: SpringArm3D = $CameraPivot/SpringArm3D #reference to the SpringArm (moves the camera in the X axis)
-@onready var model: Node3D = $model #reference to de model to rotate it
-@onready var healthComponent: Node = $HealthComponent #reference to the healthcomponent
-@onready var hurtbox: Area3D = $Hurtbox #reference to the hurtbox
+@onready var camera_pivot: Node3D = $CameraPivot ##reference to the camera's pivot (moves the camera in the Y axis)
+@onready var spring_arm: SpringArm3D = $CameraPivot/SpringArm3D ##reference to the camera's SpringArm (moves the camera in the X axis)
+@onready var model: Node3D = $model ##reference to de player's model
+@onready var healthComponent: Node = $HealthComponent ##reference to the player's healthcomponent
+@onready var hurtbox: Area3D = $Hurtbox ##reference to the player's hurtbox
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -68,10 +72,11 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+## Errases the player and restarts the loop
 func _on_died():
 	print(self.name, " died")
 	get_tree().reload_current_scene()
 
-
+## Prints the current level when leveled up
 func _on_experience_component_leveled_up(new_level: int) -> void:
-	print(new_level)
+	print("Leveled up!, new level: ",new_level)

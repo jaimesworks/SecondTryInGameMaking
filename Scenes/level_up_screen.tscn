@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dtu87r71ksj1d"]
+
+[ext_resource type="Script" uid="uid://ivdht2r68b1o" path="res://Scripts/level_up_screen.gd" id="1_j82rw"]
+[ext_resource type="Script" uid="uid://8670v2skp8g8" path="res://Scripts/Modifiers/modifier_data.gd" id="2_1uo7w"]
+[ext_resource type="Resource" uid="uid://dgsota3spare0" path="res://Data/Modifiers/damage_modifier.tres" id="3_whk23"]
+[ext_resource type="Resource" uid="uid://d0mp7rfitxpgd" path="res://Data/Modifiers/attack_speed_modifier.tres" id="4_nwcg3"]
+[ext_resource type="Resource" uid="uid://b0oxo1fmnlicg" path="res://Data/Modifiers/area_modifier.tres" id="5_1t0d7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j82rw"]
+font_size = 46
+font_color = Color(0.53333336, 1, 1, 1)
+
+[node name="LevelUpScreen" type="CanvasLayer" unique_id=786042998]
+process_mode = 3
+script = ExtResource("1_j82rw")
+modifier_pool = Array[ExtResource("2_1uo7w")]([ExtResource("3_whk23"), ExtResource("4_nwcg3"), ExtResource("5_1t0d7")])
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1234399042]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1321505809]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1370055696]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+text = "¡Subes de Nivel!"
+label_settings = SubResource("LabelSettings_j82rw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=86212565]
+layout_mode = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1042429804]
+custom_minimum_size = Vector2(200, 280)
+custom_maximum_size = Vector2(200, 280)
+layout_mode = 2
+text = "Opcion1"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=2065814267]
+custom_minimum_size = Vector2(200, 280)
+layout_mode = 2
+text = "Opcion2"
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=599953879]
+custom_minimum_size = Vector2(200, 280)
+layout_mode = 2
+text = "Opcion3"
