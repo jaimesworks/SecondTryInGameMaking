@@ -3,13 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://bhto4jp2m4768" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://dr0uuweljyy67" path="res://Scenes/weapons/aura_weapon.tscn" id="2_8j60k"]
 [ext_resource type="PackedScene" uid="uid://irpuxp7jcg53" path="res://Scenes/enemy.tscn" id="2_go701"]
-[ext_resource type="PackedScene" uid="uid://06yrkkbjxine" path="res://Scenes/room.tscn" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://4466bqdnrs2s" path="res://Scenes/weapons/projectile_weapon.tscn" id="3_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://dtu87r71ksj1d" path="res://Scenes/level_up_screen.tscn" id="6_5ukr8"]
 [ext_resource type="Script" uid="uid://8670v2skp8g8" path="res://Scripts/Modifiers/modifier_data.gd" id="7_o06y3"]
 [ext_resource type="Resource" uid="uid://b0oxo1fmnlicg" path="res://Data/Modifiers/area_modifier.tres" id="8_0fj1v"]
 [ext_resource type="Resource" uid="uid://d0mp7rfitxpgd" path="res://Data/Modifiers/attack_speed_modifier.tres" id="9_ikia7"]
 [ext_resource type="Resource" uid="uid://dgsota3spare0" path="res://Data/Modifiers/damage_modifier.tres" id="10_7yui6"]
+[ext_resource type="PackedScene" uid="uid://6h6qm1c8865t" path="res://Scenes/debug/debug_floor.tscn" id="11_7yui6"]
+[ext_resource type="Script" uid="uid://dafyla1rwo77y" path="res://Scripts/enemy_spawner.gd" id="11_ikia7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x8tuq"]
 
@@ -36,12 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2334723, 0)
 
 [node name="projectile_weapon" parent="Player" unique_id=1033279224 instance=ExtResource("3_fo5ed")]
 
-[node name="Enemy" parent="." unique_id=807197159 instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1094203, -6.9027185)
-speed = 0.0
-
-[node name="Room" parent="." unique_id=1246481952 instance=ExtResource("3_5a7ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-
 [node name="LevelUpScreen" parent="." unique_id=786042998 instance=ExtResource("6_5ukr8")]
 modifier_pool = Array[ExtResource("7_o06y3")]([ExtResource("8_0fj1v"), ExtResource("9_ikia7"), ExtResource("10_7yui6")])
+
+[node name="EnemySpawner" type="Node3D" parent="." unique_id=485745306]
+script = ExtResource("11_ikia7")
+enemy_pool = Array[PackedScene]([ExtResource("2_go701")])
+
+[node name="debug_floor" parent="." unique_id=1864931018 instance=ExtResource("11_7yui6")]

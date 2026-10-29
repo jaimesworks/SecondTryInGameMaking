@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name BasicEnemy
 var player : Node3D;
 
 @export var xp_given := 10 ## The xp it gives when dies

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var modifier_pool : Array[ModifierData] ## The pool of the modifier that can appear
+@export var modifier_pool : Array[ModifierData] ## The pool of the modifiers that can appear
 
 var modifier_inventory : ModifierInventory ##reference of the ModifierInventory
 var modifiers_to_choose : Array[ModifierData] ## List of the modifiers that appear when Leveled Up
