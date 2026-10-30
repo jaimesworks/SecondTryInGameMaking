@@ -8,6 +8,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ekxgv"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=807197159 groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_1f0kj")
 xp_gem_scene = ExtResource("2_287tu")
 
