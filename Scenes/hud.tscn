@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dg5lmj23in0lr"]
+
+[ext_resource type="Script" uid="uid://b5o6fwbs7j23y" path="res://Scripts/CanvasLayers/hud.gd" id="1_e0onf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=859471273]
+script = ExtResource("1_e0onf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=101084544]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1763376115]
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=1982940835]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=47765142]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1744719221]
+layout_mode = 2
+
+[node name="XpBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=671754585]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+show_percentage = false

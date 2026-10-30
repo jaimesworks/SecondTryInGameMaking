@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://dgsota3spare0" path="res://Data/Modifiers/damage_modifier.tres" id="10_7yui6"]
 [ext_resource type="PackedScene" uid="uid://6h6qm1c8865t" path="res://Scenes/debug/debug_floor.tscn" id="11_7yui6"]
 [ext_resource type="Script" uid="uid://dafyla1rwo77y" path="res://Scripts/enemy_spawner.gd" id="11_ikia7"]
+[ext_resource type="PackedScene" uid="uid://dg5lmj23in0lr" path="res://Scenes/hud.tscn" id="12_7yui6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x8tuq"]
 
@@ -45,3 +46,5 @@ script = ExtResource("11_ikia7")
 enemy_pool = Array[PackedScene]([ExtResource("2_go701")])
 
 [node name="debug_floor" parent="." unique_id=1864931018 instance=ExtResource("11_7yui6")]
+
+[node name="HUD" parent="." unique_id=859471273 instance=ExtResource("12_7yui6")]

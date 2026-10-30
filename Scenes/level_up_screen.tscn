@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtu87r71ksj1d"]
 
-[ext_resource type="Script" uid="uid://ivdht2r68b1o" path="res://Scripts/level_up_screen.gd" id="1_j82rw"]
+[ext_resource type="Script" uid="uid://ivdht2r68b1o" path="res://Scripts/CanvasLayers/level_up_screen.gd" id="1_j82rw"]
 [ext_resource type="Script" uid="uid://8670v2skp8g8" path="res://Scripts/Modifiers/modifier_data.gd" id="2_1uo7w"]
 [ext_resource type="Resource" uid="uid://dgsota3spare0" path="res://Data/Modifiers/damage_modifier.tres" id="3_whk23"]
 [ext_resource type="Resource" uid="uid://d0mp7rfitxpgd" path="res://Data/Modifiers/attack_speed_modifier.tres" id="4_nwcg3"]
